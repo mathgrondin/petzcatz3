@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsgyssiwxbnqv"]
+[gd_scene load_steps=7 format=3 uid="uid://bsgyssiwxbnqv"]
 
-[ext_resource type="Script" uid="uid://bt36bt52qkx37" path="res://scenes/world/rover/vehicle_body_3d.gd" id="1_2qebd"]
+[ext_resource type="Script" uid="uid://bt36bt52qkx37" path="res://scenes/world/rover/vehicle_body_3d.gd" id="2_u48yc"]
+
+[sub_resource type="GDScript" id="GDScript_2qebd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2qebd"]
 
@@ -13,10 +15,11 @@ size = Vector3(1, 0.53125, 0.748169)
 albedo_color = Color(0.152476, 0.152476, 0.152476, 1)
 
 [node name="Rover" type="Node3D"]
+script = SubResource("GDScript_2qebd")
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.344513, 0)
-script = ExtResource("1_2qebd")
+script = ExtResource("2_u48yc")
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.48175, 0.415175, 0)
