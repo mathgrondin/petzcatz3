@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3nmkhlj45vod"]
+[gd_scene load_steps=6 format=3 uid="uid://b3nmkhlj45vod"]
 
 [ext_resource type="PackedScene" uid="uid://bsgyssiwxbnqv" path="res://scenes/world/rover/rover.tscn" id="1_dphjl"]
 [ext_resource type="PackedScene" uid="uid://b7ed0d5mtn07p" path="res://scenes/map/map_generation.tscn" id="2_sl2e5"]
+[ext_resource type="PackedScene" uid="uid://dq2bmncc6a3ro" path="res://scenes/world/collectables/collectable.tscn" id="3_1fp7r"]
+[ext_resource type="PackedScene" uid="uid://dh01snt3fqcya" path="res://scenes/world/collectables/collectable_ui.tscn" id="4_6m72w"]
 
 [sub_resource type="Environment" id="Environment_dphjl"]
 background_mode = 1
@@ -21,3 +23,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4734, 14.4398, -33.8057)
 
 [node name="MapGeneration" parent="." instance=ExtResource("2_sl2e5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.2419, 0)
+
+[node name="collectable_1" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 15.1068, -7.18074, -41.0329)
+
+[node name="collectable_2" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 21.4339, -5.8056, -32.7133)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="collectable_UI" parent="CanvasGroup" instance=ExtResource("4_6m72w")]
+
+[node name="collectable_3" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 35.0649, -5.64988, -33.9078)
