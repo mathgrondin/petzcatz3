@@ -1,6 +1,5 @@
 @tool
 extends MeshInstance3D
-@onready var terrain_collision_shape_3d: CollisionShape3D = $"../TerrainCollisionShape3D"
 
 const size := 512.0
 
@@ -16,7 +15,7 @@ const size := 512.0
 		if noise:
 			noise.changed.connect(update_mesh)
 
-@export_range(4.0, 128.0, 4.0) var height := 64.0:
+@export_range(4.0, 256.0, 4.0) var height := 64.0:
 	set(new_height):
 		height = new_height
 		material_override.set_shader_parameter("height", height * 2.0)
@@ -38,7 +37,6 @@ func update_mesh() -> void:
 	var plane:= PlaneMesh.new()
 	plane.subdivide_depth = resolution
 	plane.subdivide_width = resolution
-	print(plane.subdivide_depth, plane.subdivide_width)
 	plane.size = Vector2(size, size)
 	
 	var plane_arrays := plane.get_mesh_arrays()
@@ -66,5 +64,7 @@ func update_mesh() -> void:
 	update_collision_shape()
 
 func update_collision_shape():
-	terrain_collision_shape_3d = CollisionShape3D.new()
-	terrain_collision_shape_3d.shape = mesh.create_convex_shape()
+	if (get_child_count() > 0):
+		for c in get_children():
+			c.queue_free()
+	create_trimesh_collision()

@@ -1,12 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3nmkhlj45vod"]
+[gd_scene load_steps=4 format=3 uid="uid://b3nmkhlj45vod"]
 
 [ext_resource type="PackedScene" uid="uid://bsgyssiwxbnqv" path="res://scenes/world/rover/rover.tscn" id="1_dphjl"]
-[ext_resource type="PackedScene" uid="uid://dq2bmncc6a3ro" path="res://scenes/world/collectables/area_3d.tscn" id="2_sl2e5"]
 [ext_resource type="PackedScene" uid="uid://b7ed0d5mtn07p" path="res://scenes/map/map_generation.tscn" id="2_sl2e5"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4rhad"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_4rhad"]
 
 [sub_resource type="Environment" id="Environment_dphjl"]
 background_mode = 1
@@ -14,28 +9,15 @@ background_color = Color(0.393804, 0.613341, 0.805366, 1)
 
 [node name="World" type="Node3D"]
 
-[node name="floor" type="StaticBody3D" parent="."]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_4rhad")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_4rhad")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dphjl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.56771, 0)
+transform = Transform3D(0.938149, 1.51343e-08, -0.346232, 0.346232, -4.10078e-08, 0.938149, 0, -1, -4.37114e-08, 0, 96.3178, 0)
 shadow_enabled = true
 
 [node name="Rover" parent="." instance=ExtResource("1_dphjl")]
-
-[node name="Area3D" parent="." instance=ExtResource("2_sl2e5")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 6.14862, 0.32528, 1.42609)
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.939307, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4734, 14.4398, -33.8057)
 
 [node name="MapGeneration" parent="." instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.2419, 0)
