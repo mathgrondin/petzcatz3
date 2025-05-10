@@ -23,6 +23,7 @@ script = ExtResource("2_u48yc")
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.48175, 0.415175, 0)
+current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.32, 0, 0, 0, 0.47, 0, 0, 0)
