@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3nmkhlj45vod"]
+[gd_scene load_steps=6 format=3 uid="uid://b3nmkhlj45vod"]
 
 [ext_resource type="PackedScene" uid="uid://bsgyssiwxbnqv" path="res://scenes/world/rover/rover.tscn" id="1_dphjl"]
+[ext_resource type="PackedScene" uid="uid://dq2bmncc6a3ro" path="res://scenes/world/collectables/area_3d.tscn" id="2_sl2e5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4rhad"]
 
@@ -30,3 +31,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.5
 shadow_enabled = true
 
 [node name="Rover" parent="." instance=ExtResource("1_dphjl")]
+
+[node name="Area3D" parent="." instance=ExtResource("2_sl2e5")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 6.14862, 0.32528, 1.42609)
