@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c555cklxjkj5r"]
+
+[ext_resource type="ArrayMesh" uid="uid://dbye3hwqs6hri" path="res://assets/roverObj/rover.obj" id="1_vqrcg"]
+
+[node name="roverMesh" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_vqrcg")
