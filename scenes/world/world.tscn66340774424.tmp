@@ -35,7 +35,9 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 21.4339, -5.8056, -3
 
 [node name="collectable_UI" parent="CanvasGroup" instance=ExtResource("4_6m72w")]
 
-[node name="juicyBar" parent="CanvasGroup" instance=ExtResource("4_v5dby")]
+[node name="ProgressBar" parent="CanvasGroup" instance=ExtResource("4_v5dby")]
+offset_left = 1000.0
+offset_right = 1224.0
 
 [node name="collectable_3" parent="." instance=ExtResource("3_1fp7r")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 35.0649, -5.64988, -33.9078)
