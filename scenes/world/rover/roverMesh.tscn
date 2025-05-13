@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://c555cklxjkj5r"]
+[gd_scene load_steps=8 format=3 uid="uid://c555cklxjkj5r"]
 
 [ext_resource type="ArrayMesh" uid="uid://dbye3hwqs6hri" path="res://assets/roverObj/rover.obj" id="1_vqrcg"]
+[ext_resource type="Texture2D" uid="uid://b4v8vr4gxludl" path="res://assets/roverTextures/rover_roverTexture_BaseColor.png" id="2_oeigp"]
+[ext_resource type="Texture2D" uid="uid://dh8xommwj2ciw" path="res://assets/roverTextures/rover_roverTexture_Metallic.png" id="3_4rjh8"]
+[ext_resource type="Texture2D" uid="uid://cmeg8y5a7q0ry" path="res://assets/roverTextures/rover_roverTexture_Height.png" id="3_a078v"]
+[ext_resource type="Texture2D" uid="uid://m0ktxfqi2nub" path="res://assets/roverTextures/rover_roverTexture_Normal.png" id="4_0ojh5"]
+[ext_resource type="Texture2D" uid="uid://dpsob8rhoxrff" path="res://assets/roverTextures/rover_roverTexture_Roughness.png" id="5_0ojh5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24od4"]
+albedo_texture = ExtResource("2_oeigp")
+metallic = 1.0
+metallic_texture = ExtResource("3_4rjh8")
+roughness_texture = ExtResource("5_0ojh5")
+normal_enabled = true
+normal_texture = ExtResource("4_0ojh5")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("3_a078v")
 
 [node name="roverMesh" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_vqrcg")
+surface_material_override/0 = SubResource("StandardMaterial3D_24od4")
