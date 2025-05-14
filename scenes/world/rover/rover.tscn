@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsgyssiwxbnqv"]
+[gd_scene load_steps=6 format=3 uid="uid://bsgyssiwxbnqv"]
 
 [ext_resource type="PackedScene" uid="uid://c555cklxjkj5r" path="res://scenes/world/rover/roverMesh.tscn" id="2_feqcl"]
-[ext_resource type="Script" uid="uid://bt36bt52qkx37" path="res://scenes/world/rover/vehicle_body_3d.gd" id="2_u48yc"]
-
-[sub_resource type="GDScript" id="GDScript_2qebd"]
+[ext_resource type="Script" uid="uid://bt36bt52qkx37" path="res://scenes/world/rover/rover.gd" id="2_u48yc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u48yc"]
 size = Vector3(1, 0.53125, 0.748169)
@@ -14,7 +12,6 @@ size = Vector3(1, 0.53125, 0.748169)
 albedo_color = Color(0.152476, 0.152476, 0.152476, 1)
 
 [node name="Rover" type="Node3D"]
-script = SubResource("GDScript_2qebd")
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.344513, 0)

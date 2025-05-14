@@ -23,6 +23,8 @@ func change_current_value(value: float):
 	current_value = clamp(value, min_value, max_value)
 	run_juicy_tween(top_layer_bar, current_value, 0.2,0)
 	run_juicy_tween(bottom_layer_bar, current_value, 0.4,0.1 )
+	if(current_value <= min_value):
+		get_tree().change_scene_to_file("res://scenes/world/endGame.tscn")
 	pass
 	
 func run_juicy_tween(bar: ProgressBar, value: float, lenght: float, delay: float):

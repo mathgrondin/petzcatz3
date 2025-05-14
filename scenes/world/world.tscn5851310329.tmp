@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3nmkhlj45vod"]
+[gd_scene load_steps=8 format=3 uid="uid://b3nmkhlj45vod"]
 
-[ext_resource type="Script" uid="uid://hrl24x4w8rs6" path="res://scenes/world/world.gd" id="1_bq33v"]
 [ext_resource type="PackedScene" uid="uid://bsgyssiwxbnqv" path="res://scenes/world/rover/rover.tscn" id="1_dphjl"]
 [ext_resource type="PackedScene" uid="uid://b7ed0d5mtn07p" path="res://scenes/map/map_generation.tscn" id="2_sl2e5"]
 [ext_resource type="PackedScene" uid="uid://dq2bmncc6a3ro" path="res://scenes/world/collectables/collectable.tscn" id="3_1fp7r"]
@@ -13,7 +12,6 @@ background_mode = 1
 background_color = Color(0.393804, 0.613341, 0.805366, 1)
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_bq33v")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dphjl")

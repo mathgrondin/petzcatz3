@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://msopbm6dx5d8"]
+
+[ext_resource type="Texture2D" uid="uid://tes2dywqmhem" path="res://assets/UI/battery.png" id="1_52g5p"]
+[ext_resource type="Script" uid="uid://dks7e3xdl70d" path="res://scenes/world/end_game.gd" id="1_82dej"]
+[ext_resource type="Texture2D" uid="uid://pqapaber1uoj" path="res://assets/UI/restart.png" id="2_82dej"]
+[ext_resource type="Texture2D" uid="uid://bc32p24seuo0x" path="res://assets/UI/pressed.png" id="3_v1k1m"]
+[ext_resource type="Texture2D" uid="uid://dwsrfdfhe8q0d" path="res://assets/UI/hovered.png" id="4_5iixl"]
+
+[node name="EndGame" type="CanvasLayer"]
+script = ExtResource("1_82dej")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.144063, 0.144063, 0.144063, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -108.5
+offset_right = 124.0
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_52g5p")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_82dej")
+texture_pressed = ExtResource("3_v1k1m")
+texture_hover = ExtResource("4_5iixl")
+texture_focused = ExtResource("4_5iixl")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="VBoxContainer/CenterContainer/TextureButton" to="." method="_on_texture_button_pressed"]

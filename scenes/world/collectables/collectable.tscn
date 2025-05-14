@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq2bmncc6a3ro"]
 
-[ext_resource type="Script" uid="uid://bbomt45yj3ths" path="res://area_3d.gd" id="1_og306"]
+[ext_resource type="Script" uid="uid://bbomt45yj3ths" path="res://scenes/world/collectables/collectable.gd" id="1_og306"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og306"]
 albedo_color = Color(1, 0, 0, 1)

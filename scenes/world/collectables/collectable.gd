@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	rotate_y(deg_to_rad(ROT_SPEED))
 
-
+"res://scripts/game_controller.gd"
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Node3D:

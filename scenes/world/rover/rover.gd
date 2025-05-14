@@ -14,7 +14,6 @@ func _ready():
 	else: 
 		print("Progress bar initialized successfully!")
 
-	
 func _physics_process(delta):
 	var s = Input.get_axis("move_right", "move_left")
 	steering = move_toward(steering,  s * MAX_STEER, delta * 10)
