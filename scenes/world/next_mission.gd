@@ -1,6 +1,6 @@
 extends Control
 
-@onready var label: Label = $HBoxContainer/CenterContainer2/missionTarget
+@onready var label: Label = $HBoxContainer/CenterContainer3/missionTarget
 
 func _ready():
 	var target = str(GameController.missions[GameController.missionIndex].collect.red).pad_decimals(0)
