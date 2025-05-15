@@ -39,10 +39,10 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 21.4339, -5.8056, -3
 [node name="collectable_UI" parent="CanvasGroup" instance=ExtResource("4_6m72w")]
 
 [node name="juicyBar" parent="CanvasGroup" instance=ExtResource("4_v5dby")]
+max_value = 500.0
 
 [node name="collectable_3" parent="." instance=ExtResource("3_1fp7r")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 35.0649, -5.64988, -33.9078)
 
-[node name="Station" parent="." node_paths=PackedStringArray("progress_bar") instance=ExtResource("6_t5ptc")]
+[node name="Station" parent="." instance=ExtResource("6_t5ptc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41408, -7.34778, -33.4914)
-progress_bar = NodePath("../CanvasGroup/juicyBar")

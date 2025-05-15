@@ -8,6 +8,7 @@ class_name Juicy_bar extends Control
 @export var current_value: float
 
 func _ready() -> void:
+	GameController.progress_bar = self
 	current_value = max_value
 	set_progress_bar_default_values(top_layer_bar)
 	set_progress_bar_default_values(bottom_layer_bar)
@@ -28,8 +29,10 @@ func change_current_value(value: float):
 	pass
 	
 func run_juicy_tween(bar: ProgressBar, value: float, lenght: float, delay: float):
-	var tween = get_tree().create_tween()
-	tween.tween_property(bar, "value" , value, lenght).set_delay(delay)
+	var tree = get_tree()
+	if(tree != null):
+		var tween = get_tree().create_tween()
+		tween.tween_property(bar, "value" , value, lenght).set_delay(delay)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

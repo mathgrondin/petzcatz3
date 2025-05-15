@@ -1,0 +1,18 @@
+[
+	{
+		"spawn": {
+			"red": 3
+		},
+		"collect": {
+			"red": 1	
+		}
+	},
+	{
+		"spawn": {
+			"red": 3
+		},
+		"collect": {
+			"red": 3	
+		}
+	},
+]
