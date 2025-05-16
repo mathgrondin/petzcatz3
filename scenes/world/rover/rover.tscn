@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsgyssiwxbnqv"]
+[gd_scene load_steps=7 format=3 uid="uid://bsgyssiwxbnqv"]
 
+[ext_resource type="Script" uid="uid://dsoejgx0x2kku" path="res://scenes/world/rover/camera.gd" id="1_feqcl"]
 [ext_resource type="PackedScene" uid="uid://c555cklxjkj5r" path="res://scenes/world/rover/roverMesh.tscn" id="2_feqcl"]
 [ext_resource type="Script" uid="uid://bt36bt52qkx37" path="res://scenes/world/rover/rover.gd" id="2_u48yc"]
 
@@ -13,14 +14,21 @@ albedo_color = Color(0.152476, 0.152476, 0.152476, 1)
 
 [node name="Rover" type="Node3D"]
 
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("follow_target", "look_target")]
+transform = Transform3D(-4.37114e-08, 0.422618, -0.906308, 0, 0.906308, 0.422618, 1, 1.84732e-08, -3.9616e-08, 0, 0, 0)
+fov = 66.6
+size = 9.421
+near = 0.001
+far = 200.0
+script = ExtResource("1_feqcl")
+follow_target = NodePath("../VehicleBody3D")
+look_target = NodePath("../VehicleBody3D/roverMesh")
+offset = Vector3(-4, 2, 0)
+
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.344513, 0)
 script = ExtResource("2_u48yc")
 ENGINE_POWER = 500
-
-[node name="Camera3D" type="Camera3D" parent="VehicleBody3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.48175, 0.415175, 0)
-current = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0649414, 0.00103754)
@@ -68,3 +76,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jrpre")
 
 [node name="roverMesh" parent="VehicleBody3D" instance=ExtResource("2_feqcl")]
 transform = Transform3D(-1.44486e-08, 0, -0.298322, 0, 0.299389, 0, 0.330545, 0, -1.30401e-08, 0, 0.0786187, 0)
+
+[node name="cameraPositionPlaceholder" type="Node3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.998065, -0.0621808, 0, 0.0621808, 0.998065, -2.18219, 2.26409, 2.52517)
