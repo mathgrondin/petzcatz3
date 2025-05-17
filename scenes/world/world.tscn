@@ -29,10 +29,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4734, -6.6829, -33.8057)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.2419, 0)
 
 [node name="collectable_1" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 15.1068, -7.18074, -41.0329)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 15.1068, -6.33724, -41.0329)
 
 [node name="collectable_2" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 21.4339, -5.8056, -32.7133)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 21.5783, -5.07215, -33.0104)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -42,7 +42,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 21.4339, -5.8056, -3
 max_value = 700.0
 
 [node name="collectable_3" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 35.0649, -5.64988, -33.9078)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 35.4612, -5.0656, -33.9681)
 
 [node name="Station" parent="." instance=ExtResource("6_t5ptc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41408, -7.34778, -33.4914)

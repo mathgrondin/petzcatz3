@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dh01snt3fqcya"]
 
 [ext_resource type="Script" uid="uid://bgsrru2jxmn1a" path="res://scenes/world/collectables/collectable_ui.gd" id="1_v8kpq"]
-[ext_resource type="Texture2D" uid="uid://cn06eqrw7nbcb" path="res://assets/UI/ui.png" id="2_rlgcg"]
+[ext_resource type="Texture2D" uid="uid://brnwrp46yhfjt" path="res://assets/UI/algue_icon.png" id="2_v8kpq"]
 
 [node name="collectable_UI" type="Control"]
 layout_mode = 3
@@ -16,8 +16,8 @@ script = ExtResource("1_v8kpq")
 layout_mode = 0
 offset_right = 25.0
 offset_bottom = 25.0
-texture = ExtResource("2_rlgcg")
-expand_mode = 1
+texture = ExtResource("2_v8kpq")
+expand_mode = 3
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
