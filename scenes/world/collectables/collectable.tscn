@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bbomt45yj3ths" path="res://scenes/world/collectables/collectable.gd" id="1_og306"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og306"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_leujq"]
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xw1at"]
-material = SubResource("StandardMaterial3D_og306")
+material = SubResource("StandardMaterial3D_leujq")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_etpvh"]
 

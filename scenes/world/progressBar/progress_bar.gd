@@ -1,7 +1,9 @@
 class_name Juicy_bar extends Control
 
+@onready var Recharge: TextureRect = $Recharge
 @export var top_layer_bar: ProgressBar
 @export var bottom_layer_bar : ProgressBar
+
 
 @export var min_value :float
 @export var max_value: float
@@ -34,5 +36,6 @@ func run_juicy_tween(bar: ProgressBar, value: float, lenght: float, delay: float
 		var tween = get_tree().create_tween()
 		tween.tween_property(bar, "value" , value, lenght).set_delay(delay)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+func _process(delta):
+	Recharge.visible = GameController.isCharging

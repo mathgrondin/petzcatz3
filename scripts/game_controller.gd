@@ -8,6 +8,7 @@ var station: Station;
 var missions: Array;
 var missionIndex: int = 0
 
+
 func _ready():
 	EventController.connect("on_station_interact", onStationInteract)
 	var file = "res://resources/missions.json"
@@ -33,6 +34,7 @@ func processCharging():
 		progress_bar.change_current_value(progress_bar.current_value + station.CHARGING_SPEED)
 		var msg = "charging" + "%.02f" % progress_bar.current_value
 		print(msg)
+
 
 func collectable_collected(value: int):
 	total_collectables += value

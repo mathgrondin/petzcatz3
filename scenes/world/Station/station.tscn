@@ -9,6 +9,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="Station" type="Area3D"]
 script = ExtResource("1_s2y22")
+CHARGING_SPEED = 1.0
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_s2y22")

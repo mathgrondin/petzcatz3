@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://di1dokuqe6tda"]
+[gd_scene load_steps=7 format=3 uid="uid://di1dokuqe6tda"]
 
 [ext_resource type="Script" uid="uid://b16qtuaqx7qv2" path="res://scenes/world/progressBar/progress_bar.gd" id="1_cpqvf"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48h1e"]
-bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+[ext_resource type="Texture2D" uid="uid://68rl15nvd1c0" path="res://assets/UI/battery_bar.png" id="2_48h1e"]
+[ext_resource type="Texture2D" uid="uid://dxiek6xhynqep" path="res://assets/UI/recharge.png" id="3_qdrkk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdrkk"]
-bg_color = Color(0.960784, 0.698039, 0, 1)
+bg_color = Color(0.137255, 0.207843, 0.34902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vcyrr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3g7jg"]
-bg_color = Color(1, 0, 0, 1)
+bg_color = Color(0.290196, 0.427451, 0.85098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="juicyBar" type="Control" node_paths=PackedStringArray("top_layer_bar", "bottom_layer_bar")]
 layout_mode = 3
@@ -25,11 +32,11 @@ max_value = 300.0
 
 [node name="BottomLayer" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 526.0
-offset_top = 47.0
-offset_right = 763.0
-offset_bottom = 85.0
-theme_override_styles/background = SubResource("StyleBoxFlat_48h1e")
+offset_left = 1143.0
+offset_top = 289.0
+offset_right = 1372.0
+offset_bottom = 357.0
+rotation = -1.5708
 theme_override_styles/fill = SubResource("StyleBoxFlat_qdrkk")
 max_value = 5000.0
 value = 2000.0
@@ -37,12 +44,38 @@ show_percentage = false
 
 [node name="TopLayer" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 526.0
-offset_top = 46.0
-offset_right = 763.0
-offset_bottom = 85.0
+offset_left = 1143.0
+offset_top = 289.0
+offset_right = 1372.0
+offset_bottom = 357.0
+rotation = -1.5708
 theme_override_styles/background = SubResource("StyleBoxEmpty_vcyrr")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3g7jg")
 max_value = 5000.0
 value = 2000.0
 show_percentage = false
+
+[node name="battery" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.877
+anchor_right = 1.0
+anchor_bottom = 0.429
+offset_left = 0.0549316
+offset_top = 31.0
+offset_right = -58.0
+offset_bottom = -0.309021
+texture = ExtResource("2_48h1e")
+
+[node name="Recharge" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.873
+anchor_right = 1.0
+anchor_bottom = 0.424
+offset_left = 35.1949
+offset_top = 145.0
+offset_right = -88.0
+offset_bottom = -101.704
+texture = ExtResource("3_qdrkk")

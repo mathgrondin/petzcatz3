@@ -66,20 +66,26 @@ texture = ExtResource("3_6h1bm")
 material = SubResource("ShaderMaterial_bnq1j")
 custom_minimum_size = Vector2(200, 258.82)
 layout_mode = 2
+anchor_top = 0.624
+anchor_right = 0.337
+anchor_bottom = 0.983
 offset_left = 212.0
-offset_top = 449.0
-offset_right = 412.0
-offset_bottom = 707.82
+offset_top = -0.279999
+offset_right = -19.36
+offset_bottom = 0.0599976
 texture = ExtResource("3_k4vbs")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 960.0
 offset_top = 628.0
-offset_right = 1005.0
-offset_bottom = 659.0
+offset_right = -275.0
+offset_bottom = -61.0
 text = "Next"
 flat = true
 
