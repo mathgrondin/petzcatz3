@@ -9,9 +9,9 @@ var angle: float = 0.0  # Angle de rotation autour du follow_target
 func _process(delta):
 	if follow_target and look_target:
 		# Contrôle de l'angle avec les touches gauche et droite
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("camera_left"):
 			angle -= rotation_speed * delta
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("camera_right"):
 			angle += rotation_speed * delta
 		
 		# Calcul de la nouvelle position avec une rotation autour du follow_target

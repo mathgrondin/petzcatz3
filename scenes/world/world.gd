@@ -14,7 +14,7 @@ func spawn_player(spawn_position: Vector3) -> void:
 		get_node("Rover").queue_free()
 	var rover = ROVER.instantiate()
 	station.global_position = spawn_position
-	rover.global_position = spawn_position + Vector3(0, 4, 0)
+	rover.global_position = spawn_position + Vector3(0, 0.5, 0)
 	add_child(rover)
 	
 

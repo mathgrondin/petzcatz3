@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://h2pefvxnwinh"]
 
-[ext_resource type="Script" uid="uid://dtlk8b43ppnhs" path="res://scenes/world/Station/station.gd" id="1_s2y22"]
+[ext_resource type="Script" uid="uid://c8i7158tlj8og" path="res://scenes/world/Station/station.gd" id="1_mktcm"]
+[ext_resource type="PackedScene" uid="uid://bswsd1vw1vpyd" path="res://scenes/world/Station/stationMesh.tscn" id="2_e0pr7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_s2y22"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0pr7"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6kf46"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+[node name="Station" type="Node3D"]
+script = ExtResource("1_mktcm")
 
-[node name="Station" type="Area3D"]
-script = ExtResource("1_s2y22")
-CHARGING_SPEED = 1.0
+[node name="StationMesh" parent="." instance=ExtResource("2_e0pr7")]
+transform = Transform3D(0.426, 0, 0, 0, 0.426, 0, 0, 0, 0.426, 0, 0, 0)
 
-[node name="mesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_s2y22")
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="collision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConcavePolygonShape3D_6kf46")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_e0pr7")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area3D" to="." method="_on_area_3d_body_shape_exited"]

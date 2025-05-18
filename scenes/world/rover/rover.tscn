@@ -1,18 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsgyssiwxbnqv"]
+[gd_scene load_steps=6 format=3 uid="uid://bsgyssiwxbnqv"]
 
 [ext_resource type="Script" uid="uid://dsoejgx0x2kku" path="res://scenes/world/rover/camera.gd" id="1_feqcl"]
+[ext_resource type="PackedScene" uid="uid://cx0y8daqfwbgo" path="res://scenes/world/rover/wheel.tscn" id="2_ea0e7"]
 [ext_resource type="PackedScene" uid="uid://c555cklxjkj5r" path="res://scenes/world/rover/roverMesh.tscn" id="2_feqcl"]
 [ext_resource type="Script" uid="uid://bt36bt52qkx37" path="res://scenes/world/rover/rover.gd" id="2_u48yc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u48yc"]
 size = Vector3(1, 0.53125, 0.748169)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_feqcl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrpre"]
-albedo_color = Color(0.152476, 0.152476, 0.152476, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_feqcl"]
 
 [node name="Rover" type="Node3D"]
 
@@ -33,40 +27,28 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.3, 
 use_as_traction = true
 wheel_radius = 0.15
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/br"]
-transform = Transform3D(-1.31134e-08, -0.05, -1.31134e-08, 0.3, -2.18557e-09, 1.31134e-08, -1.31134e-08, -2.18557e-09, 0.3, 0, 0, 0)
-mesh = SubResource("CylinderMesh_feqcl")
-surface_material_override/0 = SubResource("StandardMaterial3D_jrpre")
+[node name="Wheel" parent="VehicleBody3D/br" instance=ExtResource("2_ea0e7")]
 
 [node name="bl" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.3, -0.196, -0.3)
 use_as_traction = true
 wheel_radius = 0.15
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/bl"]
-transform = Transform3D(-1.31134e-08, -0.05, -1.31134e-08, 0.3, -2.18557e-09, 1.31134e-08, -1.31134e-08, -2.18557e-09, 0.3, 0, 0, 0)
-mesh = SubResource("CylinderMesh_feqcl")
-surface_material_override/0 = SubResource("StandardMaterial3D_jrpre")
+[node name="Wheel" parent="VehicleBody3D/bl" instance=ExtResource("2_ea0e7")]
 
 [node name="fr" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.3, -0.196081, 0.3)
 use_as_steering = true
 wheel_radius = 0.15
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/fr"]
-transform = Transform3D(-1.31134e-08, -0.05, -1.31134e-08, 0.3, -2.18557e-09, 1.31134e-08, -1.31134e-08, -2.18557e-09, 0.3, 0, 0, 0)
-mesh = SubResource("CylinderMesh_feqcl")
-surface_material_override/0 = SubResource("StandardMaterial3D_jrpre")
+[node name="Wheel" parent="VehicleBody3D/fr" instance=ExtResource("2_ea0e7")]
 
 [node name="fl" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.3, -0.196, -0.3)
 use_as_steering = true
 wheel_radius = 0.15
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/fl"]
-transform = Transform3D(-1.31134e-08, -0.05, -1.31134e-08, 0.3, -2.18557e-09, 1.31134e-08, -1.31134e-08, -2.18557e-09, 0.3, 0, 0, 0)
-mesh = SubResource("CylinderMesh_feqcl")
-surface_material_override/0 = SubResource("StandardMaterial3D_jrpre")
+[node name="Wheel" parent="VehicleBody3D/fl" instance=ExtResource("2_ea0e7")]
 
 [node name="roverMesh" parent="VehicleBody3D" instance=ExtResource("2_feqcl")]
 transform = Transform3D(-1.44486e-08, 0, -0.298322, 0, 0.299389, 0, 0.330545, 0, -1.30401e-08, 0, 0.0786187, 0)
@@ -84,8 +66,3 @@ script = ExtResource("1_feqcl")
 follow_target = NodePath("..")
 look_target = NodePath("../roverMesh")
 offset = Vector3(-5, 1, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/Camera3D"]
-transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_feqcl")
