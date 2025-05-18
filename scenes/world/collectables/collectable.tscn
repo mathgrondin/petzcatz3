@@ -6,11 +6,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_etpvh"]
 
 [node name="Collectable" type="Area3D"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 script = ExtResource("1_og306")
 collectable_type = "red"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CollectableMeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 mesh = ExtResource("2_0e2k5")
 
