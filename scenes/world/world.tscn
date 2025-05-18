@@ -23,10 +23,8 @@ transform = Transform3D(0.938149, 1.51343e-08, -0.346232, 0.346232, -4.10078e-08
 shadow_enabled = true
 
 [node name="Rover" parent="." instance=ExtResource("1_dphjl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4734, -6.6829, -33.8057)
 
 [node name="MapGeneration" parent="." instance=ExtResource("2_sl2e5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.2419, 0)
 
 [node name="collectable_1" parent="." instance=ExtResource("3_1fp7r")]
 transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 15.1068, -6.33724, -41.0329)

@@ -1,11 +1,39 @@
-@tool
+#@tool
 extends MeshInstance3D
 
-const size := 512.0
+var terrain_properties = {
+	"Mountains": {
+		"r": 64,
+		"h": 512
+	},
+	"Ground": {
+		"r": 16,
+		"h": 8,
+	}
+}
 
-@export_range(4, 256, 4) var resolution := 32:
+@export var noise_scale := 0.42
+
+@export var size := 1024.0
+
+@export_enum("Mountains", "Ground") var terrain_type: String:
+	set(new_type):
+		terrain_type = new_type
+		self.name = "Terrain"
+		if terrain_type != null:
+			resolution = terrain_properties[terrain_type]["r"]
+			height = terrain_properties[terrain_type]["h"]
+			self.name = terrain_type
+
+@export_range(4, 256, 4) var resolution: float :
 	set(new_resolution):
 		resolution = new_resolution
+		update_mesh()
+
+@export_range(4.0, 2048.0, 4.0) var height :float :
+	set(new_height):
+		height = new_height
+		material_override.set_shader_parameter("height", height * 2.0)
 		update_mesh()
 
 @export var noise: FastNoiseLite:
@@ -15,14 +43,14 @@ const size := 512.0
 		if noise:
 			noise.changed.connect(update_mesh)
 
-@export_range(4.0, 256.0, 4.0) var height := 64.0:
-	set(new_height):
-		height = new_height
-		material_override.set_shader_parameter("height", height * 2.0)
-		update_mesh()
+func _ready() -> void:
+	pass
 
 func get_height(x: float, y: float) -> float:
-	return noise.get_noise_2d(x, y) * height
+	var n = noise.get_noise_2d(x * noise_scale, y * noise_scale)
+	if terrain_type == "Ground":
+		n = (n + 1.0) * 0.5  # remap from [-1, 1] to [0, 1]
+	return n * height
 	
 func get_normal(x: float, y: float) -> Vector3:
 	var epsilon := size / resolution
