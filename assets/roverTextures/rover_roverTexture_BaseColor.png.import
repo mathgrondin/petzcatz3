@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4v8vr4gxludl"
 path.s3tc="res://.godot/imported/rover_roverTexture_BaseColor.png-a2263ce5c1a03da5362699bfd662ae07.s3tc.ctex"
+path.etc2="res://.godot/imported/rover_roverTexture_BaseColor.png-a2263ce5c1a03da5362699bfd662ae07.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/roverTextures/rover_roverTexture_BaseColor.png"
-dest_files=["res://.godot/imported/rover_roverTexture_BaseColor.png-a2263ce5c1a03da5362699bfd662ae07.s3tc.ctex"]
+dest_files=["res://.godot/imported/rover_roverTexture_BaseColor.png-a2263ce5c1a03da5362699bfd662ae07.s3tc.ctex", "res://.godot/imported/rover_roverTexture_BaseColor.png-a2263ce5c1a03da5362699bfd662ae07.etc2.ctex"]
 
 [params]
 
