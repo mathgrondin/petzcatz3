@@ -18,6 +18,9 @@ albedo_color = Color(0.152476, 0.152476, 0.152476, 1)
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.344513, 0)
+mass = 50.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.25, 0)
 script = ExtResource("2_u48yc")
 ENGINE_POWER = 500
 
