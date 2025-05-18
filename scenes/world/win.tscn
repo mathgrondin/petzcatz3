@@ -1,6 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://2x7k40xuy4e6"]
+[gd_scene load_steps=10 format=3 uid="uid://2x7k40xuy4e6"]
 
-[ext_resource type="Texture2D" uid="uid://c14e0cg7u7u66" path="res://assets/UI/win.png" id="1_kth1e"]
+[ext_resource type="Texture2D" uid="uid://dlsdn035o0vfg" path="res://assets/UI/win_bakcground-2.png" id="1_ifsm7"]
+[ext_resource type="Texture2D" uid="uid://c3gl6srf4mrmk" path="res://assets/UI/win_background-1.png" id="2_ruhfc"]
+[ext_resource type="Shader" uid="uid://ctqstpseybqpn" path="res://scenes/world/glitch.gdshader" id="3_ttfn3"]
+[ext_resource type="Texture2D" uid="uid://cwataj00ksiip" path="res://assets/UI/mechant-1.png" id="4_mqyvd"]
+[ext_resource type="Texture2D" uid="uid://bqy311nu6q8bp" path="res://assets/UI/mechant-2.png" id="5_htuqj"]
+[ext_resource type="Texture2D" uid="uid://cxmy6q6q7p760" path="res://assets/UI/win-icon.png" id="6_623aw"]
+[ext_resource type="Texture2D" uid="uid://c4y4lor4wwyse" path="res://assets/UI/thank-you.png" id="7_baqas"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5omm5"]
+shader = ExtResource("3_ttfn3")
+shader_parameter/shake_power = 0.02
+shader_parameter/shake_rate = 0.099
+shader_parameter/shake_speed = 3.0
+shader_parameter/shake_block_size = 50.0
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4u7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mqyvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_htuqj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Win" type="Control"]
 layout_mode = 3
@@ -11,13 +39,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -34,6 +62,33 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_kth1e")
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1251.0
+offset_bottom = 694.0
+texture = ExtResource("1_ifsm7")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 428.0
+offset_right = 1198.0
+offset_bottom = 704.0
+texture = ExtResource("2_ruhfc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_5omm5")
+position = Vector2(614, 231)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_n4u7p")
+frame_progress = 0.289798
+
+[node name="Win-icon" type="Sprite2D" parent="."]
+position = Vector2(640, 526)
+scale = Vector2(0.311765, 0.311765)
+texture = ExtResource("6_623aw")
+
+[node name="Thank-you" type="Sprite2D" parent="."]
+position = Vector2(613, 377)
+scale = Vector2(2.09322, 2.09322)
+texture = ExtResource("7_baqas")

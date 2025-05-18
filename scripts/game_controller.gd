@@ -21,14 +21,19 @@ func _process(delta: float) -> void:
 		processCharging()
 
 func processMission():
-	if(GameController.total_collectables >= missions[missionIndex].collect.red):
-		if(missionIndex == missions.size() -1):
-			get_tree().change_scene_to_file("res://scenes/world/win.tscn")
+	if GameController.total_collectables >= missions[missionIndex].collect.red:
+		if missionIndex == missions.size() - 1:
+# C'est la dernière mission, on affiche seulement la scène de victoire
+			var win_scene = load("res://scenes/world/win.tscn")
+			var win_instance = win_scene.instantiate()
+			get_tree().current_scene.add_child(win_instance)
 		else:
-			missionIndex = missionIndex + 1;
-		var next_mission_scene = load("res://scenes/world/nextMission.tscn")
-		var next_mission_instance = next_mission_scene.instantiate()
-		get_tree().current_scene.add_child(next_mission_instance)
+# Ce n'est pas la dernière mission, on passe à la suivante et affiche la scène "next mission"
+			missionIndex += 1
+			var next_mission_scene = load("res://scenes/world/nextMission.tscn")
+			var next_mission_instance = next_mission_scene.instantiate()
+			get_tree().current_scene.add_child(next_mission_instance)
+
 
 	
 		

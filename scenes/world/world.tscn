@@ -40,10 +40,10 @@ shadow_enabled = true
 [node name="MapGeneration" parent="." instance=ExtResource("2_sl2e5")]
 
 [node name="collectable_1" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -25.4973, 3.54061, -32.4184)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -25.4973, 3.54061, -33.6571)
 
 [node name="collectable_2" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 21.5783, -5.07215, -33.0104)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -27.8588, 3.45774, -30.1957)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -53,14 +53,14 @@ transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-0
 max_value = 700.0
 
 [node name="collectable_3" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 35.4612, -5.0656, -33.9681)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -29.921, 3.54899, -33.9681)
 
 [node name="Station" parent="." instance=ExtResource("6_t5ptc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41408, -7.34778, -33.4914)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="shader" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_1yooq")
 anchors_preset = 15
 anchor_right = 1.0
