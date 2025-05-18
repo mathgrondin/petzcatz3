@@ -40,10 +40,19 @@ shadow_enabled = true
 [node name="MapGeneration" parent="." instance=ExtResource("2_sl2e5")]
 
 [node name="collectable_1" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -25.4973, 3.54061, -33.6571)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -12.7408, 3.54061, -33.6571)
 
 [node name="collectable_2" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -27.8588, 3.45774, -30.1957)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -27.8588, 3.45774, -22.5397)
+
+[node name="collectable_3" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -29.921, 3.54899, -42.9458)
+
+[node name="collectable_5" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -39.0397, 3.54899, -25.0181)
+
+[node name="collectable_4" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -10.749, 3.54899, -42.8554)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -51,9 +60,6 @@ transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-0
 
 [node name="juicyBar" parent="CanvasGroup" instance=ExtResource("4_v5dby")]
 max_value = 700.0
-
-[node name="collectable_3" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -29.921, 3.54899, -33.9681)
 
 [node name="Station" parent="." instance=ExtResource("6_t5ptc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41408, -7.34778, -33.4914)
