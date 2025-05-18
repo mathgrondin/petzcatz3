@@ -1,0 +1,14 @@
+[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://c2gr1c18tkrt5"]
+
+[ext_resource type="Texture2D" uid="uid://cdp1n1g8dbfbf" path="res://assets/UI/algue_detail.png" id="1_dolni"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0e2k5"]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("1_dolni")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[resource]
+material = SubResource("StandardMaterial3D_0e2k5")
+size = Vector2(2, 2)
