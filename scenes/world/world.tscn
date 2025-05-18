@@ -40,7 +40,7 @@ shadow_enabled = true
 [node name="MapGeneration" parent="." instance=ExtResource("2_sl2e5")]
 
 [node name="collectable_1" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -12.5028, 3.72498, -41.5546)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -25.4973, 3.54061, -32.4184)
 
 [node name="collectable_2" parent="." instance=ExtResource("3_1fp7r")]
 transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 21.5783, -5.07215, -33.0104)
@@ -67,3 +67,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2

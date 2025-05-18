@@ -58,6 +58,10 @@ texture = ExtResource("2_24pnh")
 position = Vector2(300, 208.5)
 texture = ExtResource("3_6h1bm")
 
+[node name="Text" type="Sprite2D" parent="HBoxContainer/CenterContainer"]
+position = Vector2(296, 219)
+texture = ExtResource("8_u6wly")
+
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_bnq1j")
 custom_minimum_size = Vector2(200, 258.82)
@@ -72,6 +76,18 @@ offset_bottom = -11.94
 texture = ExtResource("3_k4vbs")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="missionTarget" type="Label" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 726.0
+offset_top = 550.0
+offset_right = -553.0
+offset_bottom = -135.0
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -99,21 +115,5 @@ size_flags_vertical = 4
 texture_normal = ExtResource("6_6h1bm")
 texture_hover = ExtResource("7_u6wly")
 ignore_texture_size = true
-
-[node name="Text" type="Sprite2D" parent="."]
-position = Vector2(731, 583)
-texture = ExtResource("8_u6wly")
-
-[node name="missionTarget" type="Label" parent="."]
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 726.0
-offset_top = 550.0
-offset_right = -553.0
-offset_bottom = -135.0
-theme_override_font_sizes/font_size = 25
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="Button/TextureButton" to="." method="_on_texture_button_pressed"]
