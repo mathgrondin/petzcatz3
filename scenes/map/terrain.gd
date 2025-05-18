@@ -4,7 +4,7 @@ extends MeshInstance3D
 var terrain_properties = {
 	"Mountains": {
 		"r": 64,
-		"h": 512
+		"h": 256,
 	},
 	"Ground": {
 		"r": 16,
@@ -33,7 +33,7 @@ var terrain_properties = {
 @export_range(4.0, 2048.0, 4.0) var height :float :
 	set(new_height):
 		height = new_height
-		material_override.set_shader_parameter("height", height * 2.0)
+		material_override.set_shader_parameter("height", height * 2)
 		update_mesh()
 
 @export var noise: FastNoiseLite:
@@ -89,6 +89,14 @@ func update_mesh() -> void:
 	var array_mesh := ArrayMesh.new()
 	array_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, plane_arrays)
 	mesh = array_mesh
+	material_override.set_shader_parameter("height", height * 2)
+	match terrain_type:
+		"Mountains":
+			material_overlay = preload("res://scenes/map/mountains_material_overlay.tres")
+		"Ground":
+			material_overlay = preload("res://scenes/map/ground_material_overlay.tres")
+		_:
+			material_overlay = null
 	update_collision_shape()
 
 func update_collision_shape():

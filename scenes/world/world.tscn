@@ -11,6 +11,11 @@
 [sub_resource type="Environment" id="Environment_dphjl"]
 background_mode = 1
 background_color = Color(0.393804, 0.613341, 0.805366, 1)
+fog_enabled = true
+fog_light_energy = 0.5
+volumetric_fog_emission = Color(0.400915, 0.238091, 0.161197, 1)
+volumetric_fog_emission_energy = 1024.0
+adjustment_saturation = 0.01
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_bq33v")

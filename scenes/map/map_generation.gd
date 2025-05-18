@@ -97,18 +97,3 @@ func compute_distance_scores(grid: Array, start: Vector2i) -> Dictionary:
 				distance_map[next] = current_distance + 1
 				queue.append(next)
 	return distance_map
-
-func grid_to_world(grid_pos: Vector2i, size: float, resolution: int) -> Vector3:
-	var step_size = size / resolution
-	var world_x = grid_pos.x * step_size
-	var world_z = grid_pos.y * step_size
-	var world_y = ground_terrain.get_height(world_x, world_z)
-	print("world_y: ", world_y)
-	return Vector3(world_x, world_y, world_z)
-
-
-func world_to_grid(world_pos: Vector3, size: float, resolution: int) -> Vector2i:
-	var step_size = size / resolution
-	var grid_x = int(round(world_pos.x / step_size))
-	var grid_y = int(round(world_pos.z / step_size))
-	return Vector2i(grid_x, grid_y)

@@ -80,8 +80,9 @@ far = 200.0
 script = ExtResource("1_feqcl")
 follow_target = NodePath("..")
 look_target = NodePath("../roverMesh")
-offset = Vector3(-4, 2, 0)
+offset = Vector3(-5, 1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D/Camera3D"]
 transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_feqcl")

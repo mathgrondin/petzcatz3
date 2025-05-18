@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ckno0kegw78ny"]
+
+[ext_resource type="Texture2D" uid="uid://d0j4aj7fpxuh0" path="res://assets/206.jpg" id="1_akcye"]
+[ext_resource type="Texture2D" uid="uid://crk7v4x7ehv5u" path="res://assets/206_norm.jpg" id="2_slygk"]
+
+[resource]
+transparency = 1
+blend_mode = 3
+shading_mode = 2
+albedo_color = Color(0.610851, 0.514025, 0.846947, 1)
+albedo_texture = ExtResource("1_akcye")
+emission = Color(0.454547, 0.0805096, 0.614285, 1)
+emission_energy_multiplier = 0.0
+rim = 0.57
+rim_tint = 0.78
+rim_texture = ExtResource("2_slygk")
+detail_normal = ExtResource("2_slygk")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.499999
+uv1_world_triplanar = true
+uv2_triplanar_sharpness = 0.353553
+uv2_world_triplanar = true
+grow_amount = -2.0
+proximity_fade_distance = 3866.88
+distance_fade_min_distance = 40.0
+distance_fade_max_distance = 1000.0
