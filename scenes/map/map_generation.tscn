@@ -58,6 +58,3 @@ mesh = SubResource("ArrayMesh_jiu2l")
 shape = SubResource("ConcavePolygonShape3D_kdrug")
 
 [node name="WalkableMarkers" type="Node3D" parent="."]
-
-[node name="SpawnMarker" type="Marker3D" parent="."]
-gizmo_extents = 1000.0

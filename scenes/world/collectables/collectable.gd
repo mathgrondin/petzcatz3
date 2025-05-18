@@ -1,6 +1,7 @@
 extends Area3D
 
 @onready var collectable_mesh_instance_3d: MeshInstance3D = $CollectableMeshInstance3D
+@onready var ray_cast_3d: RayCast3D = $RayCast3D
 const ALGUE_DETAIL = preload("res://assets/UI/algue_detail.png")
 const ALGUE_COLORS = {
 	"red":
@@ -10,6 +11,7 @@ const ALGUE_COLORS = {
 	"white":
 		Color(1.0, 1.0, 1.0),
 }
+signal bad_collectable_spawn
 
 #const ROT_SPEED = 2
 @export var value: int = 1
@@ -19,6 +21,8 @@ const ALGUE_COLORS = {
 
 func _ready() -> void:
 	await get_tree().process_frame
+	if ray_cast_3d.is_colliding():
+		emit_signal("bad_collectable_spawn")
 	colorize(ALGUE_COLORS[collectable_type])
 
 func colorize(color: Color) -> void:
@@ -26,7 +30,6 @@ func colorize(color: Color) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Node3D and body.name == "VehicleBody3D":
-		print(body.name)
 		GameController.collectable_collected(value)
 		self.queue_free() # Replace with function body.
 		print("collect 1")

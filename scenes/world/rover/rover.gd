@@ -1,12 +1,16 @@
 extends VehicleBody3D
 
+@onready var ray_cast_3d: RayCast3D = $"../RayCast3D"
 @export var MAX_STEER = 0.9
 @export var ENGINE_POWER = 300
 var triggerRecover = false
 var progress_bar: Juicy_bar
+signal bad_spawn
 
 func _ready():
-
+	await get_tree().process_frame
+	if ray_cast_3d.is_colliding():
+		emit_signal("bad_spawn")
 	progress_bar = get_node("../../CanvasGroup/juicyBar")
 
 	if progress_bar == null:

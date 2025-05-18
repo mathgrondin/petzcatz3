@@ -4,6 +4,7 @@
 [ext_resource type="QuadMesh" uid="uid://c2gr1c18tkrt5" path="res://scenes/world/collectables/collectable_algue.tres" id="2_0e2k5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_etpvh"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Collectable" type="Area3D"]
 script = ExtResource("1_og306")
@@ -14,7 +15,15 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 mesh = ExtResource("2_0e2k5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 0)
 shape = SubResource("BoxShape3D_etpvh")
+debug_fill = false
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 512, 0)
+collision_mask = 3
+collide_with_areas = true
+debug_shape_custom_color = Color(0.753097, 0, 1, 1)
+debug_shape_thickness = 5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

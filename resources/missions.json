@@ -1,18 +1,20 @@
 [
 	{
 		"spawn": {
-			"red": 3
+			"red": 3,
 		},
 		"collect": {
-			"red": 1	
+			"red": 1,
 		}
 	},
 	{
 		"spawn": {
-			"red": 3
+			"red": 3,
+			"blue": 3,
 		},
 		"collect": {
-			"red": 3	
+			"red": 1,
+			"blue": 1,
 		}
-	},
+	}
 ]

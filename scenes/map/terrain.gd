@@ -7,7 +7,7 @@ var terrain_properties = {
 		"h": 256,
 	},
 	"Ground": {
-		"r": 16,
+		"r": 32,
 		"h": 8,
 	}
 }
