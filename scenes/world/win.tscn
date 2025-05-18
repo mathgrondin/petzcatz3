@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://2x7k40xuy4e6"]
+[gd_scene load_steps=14 format=3 uid="uid://2x7k40xuy4e6"]
 
+[ext_resource type="Script" uid="uid://dvvc5x0tbfa3o" path="res://scenes/world/win.gd" id="1_htuqj"]
 [ext_resource type="Texture2D" uid="uid://dlsdn035o0vfg" path="res://assets/UI/win_bakcground-2.png" id="1_ifsm7"]
 [ext_resource type="Texture2D" uid="uid://c3gl6srf4mrmk" path="res://assets/UI/win_background-1.png" id="2_ruhfc"]
 [ext_resource type="Shader" uid="uid://ctqstpseybqpn" path="res://scenes/world/glitch.gdshader" id="3_ttfn3"]
@@ -7,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bqy311nu6q8bp" path="res://assets/UI/mechant-2.png" id="5_htuqj"]
 [ext_resource type="Texture2D" uid="uid://cxmy6q6q7p760" path="res://assets/UI/win-icon.png" id="6_623aw"]
 [ext_resource type="Texture2D" uid="uid://c4y4lor4wwyse" path="res://assets/UI/thank-you.png" id="7_baqas"]
+[ext_resource type="Texture2D" uid="uid://c2xvwo53wg1c8" path="res://assets/UI/UI_button.png" id="8_mqyvd"]
+[ext_resource type="Texture2D" uid="uid://bclpnp34cg8or" path="res://assets/UI/UI_button_pressed.png" id="9_htuqj"]
+[ext_resource type="Texture2D" uid="uid://cejkgde2pufn7" path="res://assets/UI/menu.png" id="10_623aw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5omm5"]
 shader = ExtResource("3_ttfn3")
@@ -26,7 +30,7 @@ animations = [{
 "texture": ExtResource("5_htuqj")
 }],
 "loop": true,
-"name": &"default",
+"name": &"rire-demoniaque",
 "speed": 5.0
 }]
 
@@ -37,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_htuqj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -76,12 +81,13 @@ offset_right = 1198.0
 offset_bottom = 704.0
 texture = ExtResource("2_ruhfc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="rire-animation" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_5omm5")
 position = Vector2(614, 231)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_n4u7p")
-frame_progress = 0.289798
+animation = &"rire-demoniaque"
+frame_progress = 0.317801
 
 [node name="Win-icon" type="Sprite2D" parent="."]
 position = Vector2(640, 526)
@@ -92,3 +98,22 @@ texture = ExtResource("6_623aw")
 position = Vector2(613, 377)
 scale = Vector2(2.09322, 2.09322)
 texture = ExtResource("7_baqas")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 632.0
+offset_right = 1160.0
+offset_bottom = 675.0
+texture_normal = ExtResource("8_mqyvd")
+texture_hover = ExtResource("9_htuqj")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 68.0
+offset_bottom = 37.0
+texture = ExtResource("10_623aw")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
