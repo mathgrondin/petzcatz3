@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd4cr0e8ggjer" path="res://assets/UI/JSON.png" id="3_k4vbs"]
 [ext_resource type="Texture2D" uid="uid://c2xvwo53wg1c8" path="res://assets/UI/UI_button.png" id="6_6h1bm"]
 [ext_resource type="Texture2D" uid="uid://bclpnp34cg8or" path="res://assets/UI/UI_button_pressed.png" id="7_u6wly"]
-[ext_resource type="Texture2D" uid="uid://81rjiov370y6" path="res://assets/UI/text.png" id="8_u6wly"]
+[ext_resource type="Texture2D" uid="uid://bj0rkbde0r2d1" path="res://assets/UI/text.png" id="8_u6wly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bnq1j"]
 shader = ExtResource("2_bnq1j")
@@ -47,12 +47,6 @@ layout_mode = 2
 [node name="CenterContainer3" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="missionTarget" type="Label" parent="HBoxContainer/CenterContainer3"]
-visible = false
-layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
 
@@ -71,10 +65,10 @@ layout_mode = 2
 anchor_top = 0.624
 anchor_right = 0.337
 anchor_bottom = 0.983
-offset_left = 212.0
-offset_top = -0.279999
-offset_right = -19.36
-offset_bottom = 0.0599976
+offset_left = 217.0
+offset_top = -12.28
+offset_right = -14.36
+offset_bottom = -11.94
 texture = ExtResource("3_k4vbs")
 expand_mode = 1
 stretch_mode = 5
@@ -84,10 +78,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 960.0
-offset_top = 628.0
-offset_right = -275.0
-offset_bottom = -61.0
+offset_left = 958.0
+offset_top = 616.0
+offset_right = -277.0
+offset_bottom = -73.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Next"
@@ -109,5 +103,17 @@ ignore_texture_size = true
 [node name="Text" type="Sprite2D" parent="."]
 position = Vector2(731, 583)
 texture = ExtResource("8_u6wly")
+
+[node name="missionTarget" type="Label" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 726.0
+offset_top = 550.0
+offset_right = -553.0
+offset_bottom = -135.0
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button/TextureButton" to="." method="_on_texture_button_pressed"]

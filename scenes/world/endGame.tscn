@@ -1,18 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://msopbm6dx5d8"]
+[gd_scene load_steps=12 format=3 uid="uid://msopbm6dx5d8"]
 
 [ext_resource type="Script" uid="uid://dks7e3xdl70d" path="res://scenes/world/end_game.gd" id="1_82dej"]
 [ext_resource type="Texture2D" uid="uid://pqapaber1uoj" path="res://assets/UI/restart.png" id="2_82dej"]
-[ext_resource type="Texture2D" uid="uid://68rl15nvd1c0" path="res://assets/UI/battery_bar.png" id="2_v1k1m"]
+[ext_resource type="Shader" uid="uid://cfl8f688xd1aj" path="res://scenes/world/old-tv.gdshader" id="2_v1k1m"]
+[ext_resource type="Texture2D" uid="uid://cmrmgpbb1yfd6" path="res://assets/UI/recharge_rouge.png" id="3_5iixl"]
 [ext_resource type="Texture2D" uid="uid://bc32p24seuo0x" path="res://assets/UI/pressed.png" id="3_v1k1m"]
 [ext_resource type="Texture2D" uid="uid://dwsrfdfhe8q0d" path="res://assets/UI/hovered.png" id="4_5iixl"]
+[ext_resource type="Shader" uid="uid://ctqstpseybqpn" path="res://scenes/world/glitch.gdshader" id="5_v1k1m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5iixl"]
+shader = ExtResource("2_v1k1m")
+shader_parameter/wiggle = 0.33
+shader_parameter/wiggle_speed = 55.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v1k1m"]
+shader = ExtResource("5_v1k1m")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpt72"]
+load_path = "res://.godot/imported/battery_bar_horizontale.png-06d98bb19ba98387ac172fa72bea21a7.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpt72"]
+shader = ExtResource("5_v1k1m")
+shader_parameter/shake_power = 0.05
+shader_parameter/shake_rate = 0.106
+shader_parameter/shake_speed = 10.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.101
 
 [node name="EndGame" type="CanvasLayer"]
 script = ExtResource("1_82dej")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+visible = false
+material = SubResource("ShaderMaterial_5iixl")
+offset_left = 639.5
+offset_top = 425.5
+offset_right = 639.5
+offset_bottom = 425.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -36,15 +67,27 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+material = SubResource("ShaderMaterial_v1k1m")
 layout_mode = 2
-texture = ExtResource("2_v1k1m")
+texture = SubResource("CompressedTexture2D_cpt72")
 stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/TextureRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+material = SubResource("ShaderMaterial_cpt72")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5iixl")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 24)

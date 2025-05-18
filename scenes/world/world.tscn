@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3nmkhlj45vod"]
+[gd_scene load_steps=11 format=3 uid="uid://b3nmkhlj45vod"]
 
 [ext_resource type="Script" uid="uid://hrl24x4w8rs6" path="res://scenes/world/world.gd" id="1_bq33v"]
 [ext_resource type="PackedScene" uid="uid://bsgyssiwxbnqv" path="res://scenes/world/rover/rover.tscn" id="1_dphjl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh01snt3fqcya" path="res://scenes/world/collectables/collectable_ui.tscn" id="4_6m72w"]
 [ext_resource type="PackedScene" uid="uid://di1dokuqe6tda" path="res://scenes/world/progressBar/progress_bar.tscn" id="4_v5dby"]
 [ext_resource type="PackedScene" uid="uid://h2pefvxnwinh" path="res://scenes/world/Station/station.tscn" id="6_t5ptc"]
+[ext_resource type="Shader" uid="uid://cfl8f688xd1aj" path="res://scenes/world/old-tv.gdshader" id="8_j2gmx"]
 
 [sub_resource type="Environment" id="Environment_dphjl"]
 background_mode = 1
@@ -16,6 +17,13 @@ fog_light_energy = 0.5
 volumetric_fog_emission = Color(0.400915, 0.238091, 0.161197, 1)
 volumetric_fog_emission_energy = 1024.0
 adjustment_saturation = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1yooq"]
+shader = ExtResource("8_j2gmx")
+shader_parameter/wiggle = 0.0
+shader_parameter/wiggle_speed = 0.0
+shader_parameter/smear = 0.228
+shader_parameter/blur_samples = 3
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_bq33v")
@@ -32,7 +40,7 @@ shadow_enabled = true
 [node name="MapGeneration" parent="." instance=ExtResource("2_sl2e5")]
 
 [node name="collectable_1" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 15.1068, -6.33724, -41.0329)
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -12.5028, 3.72498, -41.5546)
 
 [node name="collectable_2" parent="." instance=ExtResource("3_1fp7r")]
 transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 21.5783, -5.07215, -33.0104)
@@ -49,3 +57,13 @@ transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-0
 
 [node name="Station" parent="." instance=ExtResource("6_t5ptc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41408, -7.34778, -33.4914)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_1yooq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

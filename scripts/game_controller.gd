@@ -26,7 +26,10 @@ func processMission():
 			get_tree().change_scene_to_file("res://scenes/world/win.tscn")
 		else:
 			missionIndex = missionIndex + 1;
-			get_tree().change_scene_to_file("res://scenes/world/nextMission.tscn")
+		var next_mission_scene = load("res://scenes/world/nextMission.tscn")
+		var next_mission_instance = next_mission_scene.instantiate()
+		get_tree().current_scene.add_child(next_mission_instance)
+
 	
 		
 func processCharging():

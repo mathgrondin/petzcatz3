@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj0rkbde0r2d1"
-path="res://.godot/imported/text.png-2d5150cb1ca0805101480da20f011c11.ctex"
+uid="uid://cmrmgpbb1yfd6"
+path="res://.godot/imported/recharge_rouge.png-b80a696f9164ee3b9f956f9c89818783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/text.png"
-dest_files=["res://.godot/imported/text.png-2d5150cb1ca0805101480da20f011c11.ctex"]
+source_file="res://assets/UI/recharge_rouge.png"
+dest_files=["res://.godot/imported/recharge_rouge.png-b80a696f9164ee3b9f956f9c89818783.ctex"]
 
 [params]
 
